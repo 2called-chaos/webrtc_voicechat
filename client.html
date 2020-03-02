@@ -84,7 +84,7 @@
           /* Tear down all of our peer connections and remove all the
            * media divs when we disconnect */
           for (peer_id in peer_media_elements) {
-            peer_media_elements[peer_id].parent().remove();
+            peer_media_elements[peer_id].closest("[data-peer], [data-host]").remove();
           }
           for (peer_id in peers) {
             peers[peer_id].close();
@@ -264,7 +264,7 @@
           console.log('Signaling server said to remove peer:', config);
           var peer_id = config.peer_id;
           if (peer_id in peer_media_elements) {
-            peer_media_elements[peer_id].parent().remove();
+            peer_media_elements[peer_id].closest("[data-peer], [data-host]").remove();
           }
           if (peer_id in peers) {
             peers[peer_id].close();
