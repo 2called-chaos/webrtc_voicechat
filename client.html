@@ -14,6 +14,7 @@
       audio,
       video {
         width: 100%;
+        min-height: 54px;
         /*width:  320px;*/
         /*height:  240px;*/
         /*border:  10px solid black;*/
@@ -153,7 +154,7 @@
             peer_media_elements[peer_id] = remote_media;
 
             var div = $("<div>")
-            .addClass("row col-12")
+            .addClass("row col-12 mb-2")
             .attr("data-peer", peer_id)
             .append($("<div>").addClass("col-6").append(remote_media))
             .append(
@@ -370,7 +371,7 @@
             local_media.attr("controls", "controls");
 
             var div = $("<div>")
-            .addClass("row col-12")
+            .addClass("row col-12 mb-2")
             .attr("data-host", "true")
             .append($("<div>").addClass("col-6").append(local_media))
             .append(
